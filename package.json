@@ -1,0 +1,36 @@
+{
+  "name": "ng2workspace-addon-webpack",
+  "version": "0.0.1",
+  "description": "Webpack for ng2workspace",
+  "main": "index.js",
+  "homepage": "https://github.com/ng2workspace/ng2workspace-addon-webpack#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ng2workspace/ng2workspace-addon-webpack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ng2workspace/ng2workspace-addon-webpack/issues"
+  },
+  "keywords": [
+    "ng2workspace",
+    "angular2",
+    "ng2workspace-addon",
+    "webpack"
+  ],
+  "author": "Merott Movahedi <merott@merott.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "ng2workspace": "../ng2workspace"
+  },
+  "dependencies": {
+    "compression-webpack-plugin": "^0.3.0",
+    "glob": "^7.0.0",
+    "gulp-util": "^3.0.7",
+    "source-map-loader": "^0.1.5",
+    "util": "^0.10.3",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-md5-hash": "0.0.5"
+  },
+  "devDependencies": {}
+}

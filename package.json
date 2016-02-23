@@ -20,7 +20,7 @@
   "author": "Merott Movahedi <merott@merott.com>",
   "license": "MIT",
   "peerDependencies": {
-    "ng2workspace": "../ng2workspace"
+    "ng2workspace": "0.0.1"
   },
   "dependencies": {
     "compression-webpack-plugin": "^0.3.0",

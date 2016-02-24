@@ -36,12 +36,23 @@ var action = function(done) {
   function startWebpackDevServer(config) {
     var WebpackDevServer = require('webpack-dev-server');
 
+    config.plugins.push((function() {
+      function HandleStatsPlugin() {}
+
+      HandleStatsPlugin.prototype.apply = function(compiler) {
+        if(typeof(process) !== 'undefined') {
+          compiler.plugin('done', function(stats) {
+            handleResults(null, stats);
+          });
+        }
+      };
+
+      return new HandleStatsPlugin();
+    })());
+
     new WebpackDevServer(webpack(config), {
       noInfo: true,
-      quiet: true,
-      onUpdate: function(stats) {
-        handleResults(null, stats);
-      }
+      quiet: true
     }).listen(config.devServer.port, 'localhost', function(err) {
       if(err) {
         throw new gutil.PluginError('webpack-dev-server', err);

@@ -106,11 +106,13 @@ var action = function(done) {
   }
 
   function handleFatalError(error) {
+    soundBeep();
     log(gutil.colors.red('FATAL:', error));
     throw new gutil.PluginError('webpack', {message: error});
   }
 
   function handleSoftErrors(errors) {
+    soundBeep();
     errors.forEach(function(error) {
       log(gutil.colors.red('ERROR:', error));
     });
@@ -133,6 +135,10 @@ var action = function(done) {
     var args = [].slice.call(arguments);
     args.unshift(gutil.colors.cyan('[webpack]'));
     gutil.log.apply(gutil, args);
+  }
+
+  function soundBeep() {
+    process.stdout.write('\x07');
   }
 };
 

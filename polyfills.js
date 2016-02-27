@@ -1,6 +1,6 @@
 require('es6-shim');
 require('es6-promise');
-require('es7-reflect-metadata/dist/browser');
+require('reflect-metadata');
 
 if(process.env.mode === 'production') {
   require('zone.js/dist/zone-microtask.min.js');

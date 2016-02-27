@@ -1,6 +1,6 @@
 {
   "name": "ng2workspace-addon-webpack",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Webpack for ng2workspace",
   "main": "index.js",
   "homepage": "https://github.com/ng2workspace/ng2workspace-addon-webpack#readme",
@@ -20,7 +20,7 @@
   "author": "Merott Movahedi <merott@merott.com>",
   "license": "MIT",
   "peerDependencies": {
-    "ng2workspace": "0.0.1"
+    "ng2workspace": "^0.0.2"
   },
   "dependencies": {
     "compression-webpack-plugin": "^0.3.0",

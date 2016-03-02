@@ -28,8 +28,10 @@ module.exports = {
   },
 
   entry: {
-    polyfills: path.resolve(__dirname, '..', 'polyfills.js'),
-    main: workspace.util.toRelative(workspaceConfig.dir_src, 'main')
+    vendors: workspace.util.toRelative(
+      workspaceConfig.dir_src, workspaceConfig.file_vendors),
+    main: workspace.util.toRelative(
+      workspaceConfig.dir_src, workspaceConfig.file_main)
   },
 
   externals: [],

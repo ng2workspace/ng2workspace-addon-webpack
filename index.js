@@ -1,5 +1,4 @@
-module.exports = function() {
-  var ng2workspace = require('ng2workspace').ng2workspace;
+module.exports = function(options, ng2workspace) {
   var webpackConfig = require('./config/webpack.config.default.js');
 
   if(ng2workspace.config.env.mode === 'development') {

@@ -20,8 +20,8 @@ module.exports = function(config, taskConfig) {
       new WebpackMd5Hash(),
       new webpack.optimize.DedupePlugin(),
       new webpack.optimize.CommonsChunkPlugin({
-        name: 'polyfills',
-        filename: 'polyfills.[chunkhash].bundle.js',
+        name: 'vendors',
+        filename: 'vendors.[chunkhash].bundle.js',
         chunks: Infinity
       }),
       new webpack.optimize.UglifyJsPlugin({

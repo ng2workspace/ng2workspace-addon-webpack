@@ -5,8 +5,8 @@ module.exports = function(config, taskConfig) {
   ng2workspace.util.mergeInPlace(config, {
     plugins: [
       new webpack.optimize.CommonsChunkPlugin({
-        name: 'polyfills',
-        filename: 'polyfills.bundle.js',
+        name: 'vendors',
+        filename: 'vendors.bundle.js',
         minChunks: Infinity
       })]
   });

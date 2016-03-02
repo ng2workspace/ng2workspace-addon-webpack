@@ -1,6 +1,6 @@
 {
   "name": "ng2workspace-addon-webpack",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Webpack for ng2workspace",
   "main": "index.js",
   "homepage": "https://github.com/ng2workspace/ng2workspace-addon-webpack#readme",

@@ -51,7 +51,7 @@ var action = function(done) {
     })());
 
     new WebpackDevServer(webpack(config), {
-      hot: true,
+      hot: config.devServer.hot,
       noInfo: true,
       quiet: true
     }).listen(config.devServer.port, 'localhost', function(err) {
@@ -69,15 +69,19 @@ var action = function(done) {
     var devServerPath = require.resolve('webpack-dev-server')
         .match(/.*modules\/webpack-dev-server/)[0];
 
-    config.plugins.push(new webpack.HotModuleReplacementPlugin());
+    if(config.devServer.hot) {
+      config.plugins.push(new webpack.HotModuleReplacementPlugin());
+    }
 
     // set up inline reload strategy through webpack-dev-server
     Object.keys(config.entry).forEach(function(key) {
       config.entry[key] = [].concat(config.entry[key]);
-      config.entry[key].unshift(
-          devServerPath + '/client?' + url,
-          webpackPath + '/hot/dev-server'
-      );
+
+      if(config.devServer.hot) {
+        config.entry[key].unshift(webpackPath + '/hot/dev-server');
+      }
+
+      config.entry[key].unshift(devServerPath + '/client?' + url);
     });
   }
 
